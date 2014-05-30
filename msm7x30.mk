@@ -180,13 +180,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vold.umsdirtyratio=20
 
-# Enable repeatable keys in CWM
+# CWM Recovery
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.enable_key_repeat=true
-
-# Prefer .tar backup format in CWM
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.cwm.prefer_tar=true
+    ro.cwm.enable_key_repeat=true \
+    ro.cwm.prefer_tar=true \
+    ro.cwm.forbid_format=/boot \
+    ro.cwm.forbid_mount=/boot
 
 # For applications to determine if they should turn off specific memory-intensive
 # features that work poorly on low-memory devices.
