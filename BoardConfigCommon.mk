@@ -114,5 +114,31 @@ SOMC_CFG_SENSORS_LIGHT_AS3676_MAXRANGE := 9000
 # A custom ota package maker for a device without an exposed boot partition
 TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/semc/msm7x30-common/releasetools/semc_ota_from_target_files
 
+# SELinux
+BOARD_SEPOLICY_DIRS += \
+    device/semc/msm7x30-common/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    file_contexts \
+    property_contexts \
+    bridge.te \
+    camera.te \
+    device.te \
+    dhcp.te \
+    domain.te \
+    drmserver.te \
+    file.te \
+    geomagneticd.te \
+    init.te \
+    mac_update.te \
+    mediaserver.te \
+    rild.te \
+    rmt.te \
+    surfaceflinger.te \
+    system.te \
+    tee.te \
+    ueventd.te \
+    wpa_supplicant.te
+
 # CM Hardware tunables
 BOARD_HARDWARE_CLASS := device/semc/msm7x30-common/cmhw
